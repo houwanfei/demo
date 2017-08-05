@@ -1,0 +1,20 @@
+---
+my:
+  servers:
+    - dev.bar.com
+    - foo.bar.com
+number: 10
+
+mybatis.type-aliases-package: com.example.demo.entity
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/cralwer_data?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 123456
+  rabbitmq:
+    addresses: 127.0.0.1:5672
+    username: guest
+    password: guest
+    publisher-confirms: true
+    virtual-host: /
