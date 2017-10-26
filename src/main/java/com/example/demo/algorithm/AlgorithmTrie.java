@@ -89,4 +89,8 @@ public class AlgorithmTrie {
         }
         return node;
     }
+
+    public static void main(String[] args){
+
+    }
 }
