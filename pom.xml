@@ -60,6 +60,11 @@
 			<artifactId>elastic-job-lite-core</artifactId>
 			<version>2.0.1</version>
 		</dependency>
+		<dependency>
+			<groupId>org.htmlparser</groupId>
+			<artifactId>htmlparser</artifactId>
+			<version>2.1</version>
+		</dependency>
 
 		<!--Web页面渲染模板引擎 -->
 		<dependency>
@@ -68,10 +73,10 @@
 		</dependency>
 
 		<!-- security-->
-		<dependency>
+		<!--<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
+		</dependency>-->
 
 		<!-- import other module if need -->
 		<dependency>
@@ -95,6 +100,12 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-amqp</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid</artifactId>
+			<version>1.1.6</version>
 		</dependency>
 
 	</dependencies>
