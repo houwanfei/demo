@@ -15,5 +15,5 @@
     <reg:zookeeper id="regCenter" server-lists="127.0.0.1:2181" namespace="dd-job" base-sleep-time-milliseconds="1000" max-sleep-time-milliseconds="3000" max-retries="3" />
 
     <!-- 配置作业-->
-    <job:simple id="demoSimpleSpringJob" class="com.example.demo.test.MyElasticJob" registry-center-ref="regCenter" cron="0/10 * * * * ?" sharding-total-count="5"  />
+    <job:simple id="demoSimpleSpringJob" class="com.example.demo.test.MyElasticJob" registry-center-ref="regCenter" cron="* 0／10 * * * ?" sharding-total-count="5"  />
 </beans>
