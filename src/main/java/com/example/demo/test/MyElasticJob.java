@@ -3,6 +3,7 @@ package com.example.demo.test;
 import com.dangdang.ddframe.job.api.ShardingContext;
 import com.dangdang.ddframe.job.api.simple.SimpleJob;
 
+
 /**
  * Created by houwanfei on 2017/7/25.
  */

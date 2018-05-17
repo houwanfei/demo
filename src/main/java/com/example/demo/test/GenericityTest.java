@@ -20,7 +20,7 @@ class Orange extends Fruit{}
 public class GenericityTest {
     public static void main(String[] args){
         //List<Fruit> fList = new ArrayList<Apple>();
-        List<Apple> aList = new ArrayList<>();
+        List<Apple> aList = new ArrayList<Apple>();
         aList.add(new Jonathan());
         aList.add(new Apple());
     }
