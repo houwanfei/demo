@@ -1,5 +1,6 @@
 package com.example.demo.lambda;
 
+import java.io.IOException;
 import java.net.URI;
 import java.net.URL;
 
@@ -16,8 +17,9 @@ public class Hello {
         return "Hello";
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         new Hello().r1.run();
         new Hello().r2.run();
+        System.in.read();
     }
 }
