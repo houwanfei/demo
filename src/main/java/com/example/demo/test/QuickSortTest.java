@@ -1,5 +1,6 @@
 package com.example.demo.test;
 
+import com.example.demo.algorithm.AlgorithmMergeSort;
 import com.example.demo.algorithm.AlgorithmQuickSort;
 import com.example.demo.algorithm.AlgorithmQuickSortParallel;
 
@@ -13,9 +14,11 @@ public class QuickSortTest {
         Random random = new Random();
         int[] arrays = new int[8000000];
         int[] arrays1 = new int[8000000];
+        int[] arrays2 = new int[8000000];
         for (int i =0; i<arrays.length; i++){
             arrays[i] = random.nextInt(1000);
             arrays1[i] = arrays[i];
+            arrays2[i] = arrays[i];
         }
         long start1 = System.currentTimeMillis();
         AlgorithmQuickSort.arrays = arrays;
@@ -33,8 +36,15 @@ public class QuickSortTest {
             e.printStackTrace();
         }
         System.out.println((System.currentTimeMillis() - start2));
+
+        AlgorithmMergeSort mergeSort = new AlgorithmMergeSort();
+        int[] tmp = new int[arrays2.length];
+        start1 = System.currentTimeMillis();
+        mergeSort.sort(arrays2, 0, arrays2.length-1, tmp);
+        System.out.println((System.currentTimeMillis() - start1));
+
         for (int i=0; i<arrays.length; i++){
-            if (arrays[i] != arrays1[i]){
+            if (arrays[i] != arrays1[i] || arrays[i] != arrays2[i]){
                 System.out.println("fuck");
             }
         }
