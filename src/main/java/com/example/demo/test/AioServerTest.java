@@ -1,5 +1,7 @@
 package com.example.demo.test;
 
+import edu.princeton.cs.algs4.In;
+
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
@@ -8,16 +10,17 @@ import java.nio.channels.AsynchronousServerSocketChannel;
 import java.nio.channels.CompletionHandler;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.util.concurrent.Future;
 
 /**
  * @auther houwanfei
  * @create 2018-04-02 下午9:16
  */
 public class AioServerTest {
-    public static void main(String[] args) {
+    public static void completionHandler(){
         try {
             AsynchronousFileChannel fileChannel = AsynchronousFileChannel.open(
-                    Paths.get("/Users/anonymous/Documents/test"),
+                    Paths.get("/home/ikan/文档/data1"),
                     StandardOpenOption.READ,
                     StandardOpenOption.WRITE,
                     StandardOpenOption.CREATE);
@@ -39,5 +42,25 @@ public class AioServerTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void futureStyle(){
+        try {
+            AsynchronousFileChannel fileChannel = AsynchronousFileChannel.open(Paths.get("/home/ikan/文档/data1"),
+                    StandardOpenOption.READ);
+            ByteBuffer byteBuffer = ByteBuffer.allocate(1024);
+            Future<Integer> future = fileChannel.read(byteBuffer, 0);
+
+            while (!future.isDone()){
+                System.out.println(new String(byteBuffer.array(), "UTF-8"));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void main(String[] args) {
+        completionHandler();
+        futureStyle();
     }
 }

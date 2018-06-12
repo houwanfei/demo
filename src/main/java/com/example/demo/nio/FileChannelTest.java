@@ -1,23 +1,25 @@
 package com.example.demo.nio;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.nio.ByteBuffer;
+import java.nio.CharBuffer;
 import java.nio.channels.FileChannel;
+import java.nio.charset.Charset;
+import java.nio.charset.CharsetDecoder;
 
-/**
- * @auther houwanfei
- * @create 2018-05-29 下午2:25
- */
 public class FileChannelTest {
-    public static void main(String[] args) throws Exception{
-        FileInputStream fis = new FileInputStream("/Users/anonymous/Documents/path");
+    public static void main(String[] args) throws Exception {
+        FileInputStream fis = new FileInputStream("/home/ikan/文档/data");
         FileChannel fc = fis.getChannel();
+        System.out.println(fc.size());
         ByteBuffer buffer = ByteBuffer.allocate(1024);
         fc.read(buffer);
+        Charset charset = Charset.forName("UTF-8");
+        CharsetDecoder decoder = charset.newDecoder();
         buffer.flip();
-        byte[] bytes = buffer.array();
-
-        String str = new String(bytes, "UTF-8");
-        System.out.println(str);
+        CharBuffer cb = decoder.decode(buffer);
+        System.out.println(cb);
     }
 }
