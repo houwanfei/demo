@@ -17,7 +17,6 @@ import javax.net.ssl.SSLException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-import static edu.princeton.cs.algs4.StdIn.readLine;
 
 public class DiscardClient {
     static final boolean SSL = System.getProperty("ssl") != null;
