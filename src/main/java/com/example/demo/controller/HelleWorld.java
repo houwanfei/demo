@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.annotation.MethodLog;
 import com.example.demo.component.Sender;
 import com.example.demo.entity.FilmTag;
 import com.example.demo.mappers.FilmTagMapper;
@@ -38,6 +39,7 @@ public class HelleWorld {
         return "index";
     }
 
+    @MethodLog(description = "你猜")
     @RequestMapping(value="/hello", method = RequestMethod.GET)
     public String hello(){
         return "hello";
