@@ -39,7 +39,7 @@ public class HelleWorld {
         return "index";
     }
 
-    @MethodLog(description = "你猜")
+    @MethodLog(description = "hello world")
     @RequestMapping(value="/hello", method = RequestMethod.GET)
     public String hello(){
         return "hello";
